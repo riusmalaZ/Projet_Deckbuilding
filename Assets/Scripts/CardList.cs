@@ -62,7 +62,7 @@ public class CardList
     {
         foreach (Card n in Deck)
         {
-            if (n.Name == cardName) return true;
+            if (n.cardName == cardName) return true;
         }
         return false;
     }
