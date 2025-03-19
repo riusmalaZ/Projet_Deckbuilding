@@ -14,6 +14,7 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
+        initialPosition = transform.position;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
@@ -37,6 +38,6 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        print("ouais");
+        
     }
 }

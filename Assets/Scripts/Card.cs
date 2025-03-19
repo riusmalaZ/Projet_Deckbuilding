@@ -10,7 +10,7 @@ public class Card : ScriptableObject
     public int defenseAmount;
     public int damage;
     public int cost;
-    public Effect effect;
+    //public Effect effect;
 
     public enum CardType
     {
@@ -19,11 +19,11 @@ public class Card : ScriptableObject
         Power
     }
 
-    public enum Effect
+    /*public enum Effect
     {
         None,
         Spell,
         Power
-    }
+    }*/
 
 }
