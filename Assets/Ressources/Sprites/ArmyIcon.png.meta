@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: ea2526a52dded814a903955f6208f2d5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4086094365608191038
+    second: ArmyIcon_0
+  - first:
+      213: -1387901870726403551
+    second: ArmyIcon_1
+  - first:
+      213: 8020454476499253056
+    second: ArmyIcon_2
+  - first:
+      213: 3975443170653210914
+    second: ArmyIcon_3
+  - first:
+      213: 7110171608299371859
+    second: ArmyIcon_4
+  - first:
+      213: 1953661589383000978
+    second: ArmyIcon_5
+  - first:
+      213: 7316598998280365561
+    second: ArmyIcon_6
+  - first:
+      213: 7023979447598586152
+    second: ArmyIcon_7
+  - first:
+      213: 4801476030897130435
+    second: ArmyIcon_8
+  - first:
+      213: -3580961329383208170
+    second: ArmyIcon_9
+  - first:
+      213: -5430439980126969351
+    second: ArmyIcon_10
+  - first:
+      213: -7762288703831233168
+    second: ArmyIcon_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 50, y: 270, z: 29, w: 221}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ArmyIcon_0
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 613
+        width: 235
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e342dcc2d29b4b830800000000000000
+      internalID: 4086094365608191038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_1
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 823
+        width: 171
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12aa04c1a9e2dbce0800000000000000
+      internalID: -1387901870726403551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_2
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 613
+        width: 235
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047fde82ad06e4f60800000000000000
+      internalID: 8020454476499253056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_3
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 823
+        width: 171
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229898b308c9b2730800000000000000
+      internalID: 3975443170653210914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 473
+        width: 258
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d70cc08676ca260800000000000000
+      internalID: 7110171608299371859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 687
+        width: 174
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 293bf765ddccc1b10800000000000000
+      internalID: 1953661589383000978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_6
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 429
+        width: 335
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5ea702608c98560800000000000000
+      internalID: 7316598998280365561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_7
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 532
+        width: 143
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82912cbc7103a7160800000000000000
+      internalID: 7023979447598586152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_8
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 429
+        width: 336
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb0d23c20542a240800000000000000
+      internalID: 4801476030897130435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_9
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 532
+        width: 143
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b04b7c4aedd4ec0800000000000000
+      internalID: -3580961329383208170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_10
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 285
+        width: 348
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1e37a1c9333a4b0800000000000000
+      internalID: -5430439980126969351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmyIcon_11
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 390
+        width: 198
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07dac1cdc8fc64490800000000000000
+      internalID: -7762288703831233168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ArmyIcon_0: 4086094365608191038
+      ArmyIcon_1: -1387901870726403551
+      ArmyIcon_10: -5430439980126969351
+      ArmyIcon_11: -7762288703831233168
+      ArmyIcon_2: 8020454476499253056
+      ArmyIcon_3: 3975443170653210914
+      ArmyIcon_4: 7110171608299371859
+      ArmyIcon_5: 1953661589383000978
+      ArmyIcon_6: 7316598998280365561
+      ArmyIcon_7: 7023979447598586152
+      ArmyIcon_8: 4801476030897130435
+      ArmyIcon_9: -3580961329383208170
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
