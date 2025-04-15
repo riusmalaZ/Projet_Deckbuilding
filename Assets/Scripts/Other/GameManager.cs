@@ -41,4 +41,17 @@ public class GameManager : MonoBehaviour
     {
         activeBuffsThisTurn.Clear();
     }
+
+    public int GetModifiedValue(Card card, BuffEffect.TargetStat stat, int baseValue)
+    {
+        int modifiedValue = baseValue;
+
+        foreach (var buff in activeBuffsThisTurn)
+        {
+            //if (buff.statToModify == stat && buff.Affects(card))
+                modifiedValue += buff.amount;
+        }
+
+        return Mathf.Max(0, modifiedValue); // Évite un coût négatif par exemple
+    }
 }
