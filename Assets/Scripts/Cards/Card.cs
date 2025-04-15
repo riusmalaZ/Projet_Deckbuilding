@@ -10,6 +10,10 @@ public class Card : ScriptableObject
     public int Cost;
     public Sprite CardSprite;
     public string CardDescription;
+    
+    public enum CardType{ Attack, Defense, Buff}
+    public CardType cardType;
+
     [SerializeReference, SubclassSelector]
     public List<ICardEffect> Effects;
 

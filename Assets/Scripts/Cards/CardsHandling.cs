@@ -1,17 +1,21 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 
 public class CardsHandling : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler
 {
     Vector3 initialPosition;
     [HideInInspector] public bool played;
+    HandManager hand;
 
     void Start()
     {
         played = false;
         initialPosition = transform.position;
+        hand =  GetComponentInParent<HandManager>();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -27,7 +31,6 @@ public class CardsHandling : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-        HandManager hand =  GetComponentInParent<HandManager>();
         if (!played) transform.position = initialPosition;
         
         else 
@@ -37,14 +40,21 @@ public class CardsHandling : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                 effect.Play();
             }
             //Action de la carte
-            hand.CardsInHand.Remove(gameObject);
             hand.UpdateHandVisuals();
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         
+    }
+
+    internal void Discard(Transform discardZone)
+    {
+        hand.CardsInHand.Remove(gameObject);
+        transform.position = discardZone.position;
+        transform.rotation = Quaternion.identity;
+        transform.SetParent(discardZone);
     }
 }

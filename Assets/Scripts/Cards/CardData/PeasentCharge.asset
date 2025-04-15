@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b95dcafbdce14004892dcfa1256d8fb7, type: 3}
-  m_Name: GuardShot
+  m_Name: PeasentCharge
   m_EditorClassIdentifier: 
-  CardName: Guard Shot
-  Cost: 2
+  CardName: Peasent Charge
+  Cost: 1
   CardSprite: {fileID: -1730254177, guid: 132358e9bf26b60458b731bf001e31db, type: 3}
-  CardDescription: Deal 5 Damages
+  CardDescription: Deal 6 Damages
   Effects:
   - rid: 3437363834868465734
   references:
@@ -24,4 +24,4 @@ MonoBehaviour:
     - rid: 3437363834868465734
       type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
       data:
-        Damage: 5
+        Damage: 6

@@ -14,11 +14,7 @@ public class HandManager : MonoBehaviour
 
     void Start()
     {
-        AddCardToHand();
-        AddCardToHand();
-        AddCardToHand();
-        AddCardToHand();
-        AddCardToHand();
+        
     }
 
     public void AddCardToHand()
