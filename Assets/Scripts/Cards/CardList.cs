@@ -2,68 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardList
+public class CardList : MonoBehaviour
 {
-    public static List<Card> Deck;
-    public Card Draw()
+    
+    public GameObject Draw(List<GameObject> Cards)
     {
-        Card cardDrawn = Deck[0];
-        Deck.RemoveAt(0);
+        GameObject cardDrawn = Cards[0];
+        Cards.RemoveAt(0);
         return cardDrawn;
     }
 
-    public List<Card> Draw(int count){
-        List<Card> cardDrawn = new ();
+    public List<GameObject> Draw(int count, List<GameObject> Cards){
+        List<GameObject> cardDrawn = new ();
         for (int i = 0; i < count; i++)
         {
-            cardDrawn.Add(Draw());
+            cardDrawn.Add(Draw(Cards));
         }
         return cardDrawn;
     }
 
-    public void Shuffle()
+    public List<GameObject> Shuffle(List<GameObject> CardsToSuffle)
     {
-        List<Card> deckShuffled = new List<Card>();
-        while (Deck.Count > 0)
+        List<GameObject> cardsShuffled = new ();
+        while (CardsToSuffle.Count > 0)
         {
-            int nRand = Random.Range(0, Deck.Count);
-            deckShuffled.Add(Deck[nRand]);
-            Deck.RemoveAt(nRand);
+            int nRand = Random.Range(0, CardsToSuffle.Count);
+            cardsShuffled.Add(CardsToSuffle[nRand]);
+            CardsToSuffle.RemoveAt(nRand);
         }
-        Deck = deckShuffled;
+        return cardsShuffled;
     }
 
-    public void Add(Card cardToAdd)
+    public void Add(GameObject cardToAdd, List<GameObject> Cards)
     {
-        Deck.Add(cardToAdd);
+        Cards.Add(cardToAdd);
     }
-    public void AddThenShuffle (Card[] cardsToAdd)
+    public void AddThenShuffle (GameObject[] cardsToAdd, List<GameObject> Cards)
     {
-        foreach(Card n in cardsToAdd)
+        foreach(GameObject n in cardsToAdd)
         {
-            Add(n);
+            Add(n, Cards);
         }
-        Shuffle();
+        Shuffle(Cards);
     }
 
-    public Card Peek(){
-        return Deck[0];
+    public GameObject Peek(List<GameObject> Cards){
+        return Cards[0];
     }
-    public Card Peek(int index)
+    public GameObject Peek(int index, List<GameObject> Cards)
     {
         try{
-        return Deck[index];
+        return Cards[index];
         }catch{
-            return Deck[0];
+            return Cards[0];
         }
-    }
-
-    public bool HasCard(string cardName)
-    {
-        foreach (Card n in Deck)
-        {
-            if (n.CardName == cardName) return true;
-        }
-        return false;
     }
 }

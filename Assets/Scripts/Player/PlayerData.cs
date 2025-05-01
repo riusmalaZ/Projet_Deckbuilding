@@ -6,6 +6,7 @@ public class PlayerData : ScriptableObject
 {
     public Class ClassSelected;
     public List<Card> ActualDeck;
+    public int CP;
     public int MaxAP;
 
 }

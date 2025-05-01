@@ -1,18 +1,17 @@
 using System;
 using UnityEngine;
 
+[System.Serializable]
 public class BuffEffect : ICardEffect
 {
     public enum TargetStat { Cost, Damage, Defense }
-    public enum BuffTiming { ThisTurn, NextTurn }
-
     public TargetStat statToModify;
+    //ThisTurn == true -> buff appliqué ce tour, == false -> appliqué au prochain tour 
+    public bool ThisTurn ;
     public int amount;
 
     public bool affectAttackCards;
     public bool affectDefenseCards;
-
-    public BuffTiming timing;
     public int duration;
     public string newCardDescription;
 
@@ -21,18 +20,8 @@ public class BuffEffect : ICardEffect
         Debug.Log($"Buff temporaire : {statToModify} modifié de {amount} sur cartes " +
                   $"{(affectAttackCards ? "d’attaque " : "")}{(affectDefenseCards ? "de défense" : "")} pour ce tour.");
 
-        GameManager.Instance.RegisterTemporaryBuff(this);
+        //TurnManager.Instance.RegisterBuff(this, ThisTurn);
 
-        switch (timing)
-        {
-            case BuffTiming.ThisTurn:
-                GameManager.Instance.RegisterTemporaryBuff(this);
-                break;
-
-            case BuffTiming.NextTurn:
-                GameManager.Instance.RegisterNextTurnBuff(this);
-                break;
-        }
     }
 
     /*public bool Affects(Card card)

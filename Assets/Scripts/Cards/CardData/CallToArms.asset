@@ -16,7 +16,19 @@ MonoBehaviour:
   Cost: 2
   CardSprite: {fileID: 1870898176, guid: 132358e9bf26b60458b731bf001e31db, type: 3}
   CardDescription: Draw 1 card. The next Attack cards cost 1 less this turn
-  Effects: []
+  cardType: 0
+  Effects:
+  - rid: 3437364127100567624
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3437364127100567624
+      type: {class: BuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        statToModify: 0
+        ThisTurn: 0
+        amount: 0
+        affectAttackCards: 0
+        affectDefenseCards: 0
+        duration: 0
+        newCardDescription: 

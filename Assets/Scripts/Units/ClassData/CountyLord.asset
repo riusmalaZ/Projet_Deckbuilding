@@ -22,5 +22,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
   - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
   - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
-  - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
   - {fileID: 11400000, guid: 8b8730cfeb5df284e8b2d156d1cfc83c, type: 2}
+  BaseCP: 75
+  BaseAP: 3

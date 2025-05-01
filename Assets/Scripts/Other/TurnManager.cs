@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class TurnManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public enum BuffTiming { ThisTurn, NextTurn }
+    public static TurnManager Instance;
     public PlayerData playerData; 
-    public List<BuffEffect> activeBuffsThisTurn = new();
-    public List<BuffEffect> buffsForNextTurn = new();
+    [HideInInspector] public List<BuffEffect> activeBuffsThisTurn = new();
+    [HideInInspector] public List<BuffEffect> buffsForNextTurn = new();
+    [SerializeField] HandManager _handManager;
     int currentAP;
     
 
@@ -16,30 +18,38 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        
     }
 
-    public void RegisterTemporaryBuff(BuffEffect effect)
+    public void RegisterBuff(BuffEffect effect, bool thisTurn)
     {
-        activeBuffsThisTurn.Add(effect);
-    }
-
-    public void RegisterNextTurnBuff(BuffEffect effect)
-    {
-        buffsForNextTurn.Add(effect);
+        if (thisTurn)
+            activeBuffsThisTurn.Add(effect);
+        else 
+            buffsForNextTurn.Add(effect);
     }
 
     public void StartAllyTurn()
     {
+        _handManager.AddCardsToHand(5);
         currentAP = playerData.MaxAP;
 
         //Les buffs qui étaient enregistrés pour le tour d'après vont s'appliquer ce tour-ci 
         activeBuffsThisTurn = new List<BuffEffect>(buffsForNextTurn);
         buffsForNextTurn.Clear();
+        //APPLIQUER LES BUFFS
+
+
+        
     }
 
     public void EndAllyTurn()
     {
         activeBuffsThisTurn.Clear();
+        foreach (GameObject card in HandManager.CardsInHand)
+        {
+            
+        }
     }
 
     public int GetModifiedValue(Card card, BuffEffect.TargetStat stat, int baseValue)

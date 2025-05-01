@@ -5,5 +5,6 @@ using UnityEngine;
 public class Class : ScriptableObject
 {
     public List<Card> BaseDeck;
+    public int BaseCP;
     public int BaseAP;
 }

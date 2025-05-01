@@ -19,8 +19,11 @@ public class CardDisplay : MonoBehaviour
     public void UpdateCardDisplay()
     {
         NameText.text = CardData.CardName;
+        NameText.color = Color.white;
         CardImage.sprite = CardData.CardSprite;
         Description.text = CardData.CardDescription;
+        Description.color = Color.white;
         CostText.text = CardData.Cost.ToString();
+        CostText.color = Color.white;
     }
 }

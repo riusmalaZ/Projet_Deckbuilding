@@ -1,16 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class DiscardZone : MonoBehaviour
+public class DiscardZone : CardList
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static List<GameObject> DiscardedCards = new ();
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
