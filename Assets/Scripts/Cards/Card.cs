@@ -7,7 +7,7 @@ using UnityEngine;
 public class Card : ScriptableObject
 {
     public string CardName;
-    public int Cost;
+    public int APCost;
     public Sprite CardSprite;
     public string CardDescription;
     

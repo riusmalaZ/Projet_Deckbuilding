@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: PeasentCharge
   m_EditorClassIdentifier: 
   CardName: Peasent Charge
-  Cost: 1
+  APCost: 1
   CardSprite: {fileID: -1730254177, guid: 132358e9bf26b60458b731bf001e31db, type: 3}
   CardDescription: Deal 6 Damages
+  cardType: 0
   Effects:
   - rid: 3437363834868465734
   references:

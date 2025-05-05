@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CallToArms
   m_EditorClassIdentifier: 
   CardName: Call To Arms
-  Cost: 2
+  APCost: 2
   CardSprite: {fileID: 1870898176, guid: 132358e9bf26b60458b731bf001e31db, type: 3}
   CardDescription: Draw 1 card. The next Attack cards cost 1 less this turn
   cardType: 0

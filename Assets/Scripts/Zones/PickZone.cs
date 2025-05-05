@@ -16,9 +16,10 @@ public class PickZone : CardList
         int n = DiscardZone.DiscardedCards.Count;
         for (int i = 0; i < n; i++)
         {
-            print("aha");
             CardsInPick.Add(DiscardZone.DiscardedCards[0]);
             DiscardZone.DiscardedCards[0].SetActive(false);
+            DiscardZone.DiscardedCards[0].GetComponent<CardsHandling>().played = false;
+            
             DiscardZone.DiscardedCards.RemoveAt(0);
             
         }

@@ -4,13 +4,14 @@ using UnityEngine.EventSystems;
 public class DropZone : MonoBehaviour, IDropHandler
 {
     [SerializeField] Transform discardZone;
+
     public void OnDrop(PointerEventData eventData)
     {
-        CardsHandling card = 
-        eventData.pointerDrag.GetComponent<CardsHandling>();
+        CardsHandling card = eventData.pointerDrag.GetComponent<CardsHandling>();
 
-        card.played = true;
-        card.Discard(discardZone);
+        if (card != null && card.playable)
+        {
+            card.Discard(discardZone);
+        }
     }
-
 }

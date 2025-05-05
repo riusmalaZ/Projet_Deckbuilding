@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -9,7 +10,9 @@ public class CardsHandling : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     Vector3 initialPosition;
     [HideInInspector] public bool played;
+    [HideInInspector] public bool playable;
     HandManager hand;
+    
 
     void Start()
     {
@@ -21,28 +24,33 @@ public class CardsHandling : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         initialPosition = transform.position;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
+        int cardAP = GetComponent<CardDisplay>().CardData.APCost;
+        playable = AllyArmy.Instance.UseCard(cardAP);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         if(!played) transform.position = eventData.position;
+
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-        if (!played) transform.position = initialPosition;
-        
-        else 
+
+
+        if (!played && !playable)
         {
-            foreach (ICardEffect effect in GetComponent<CardDisplay>().CardData.Effects)
-            {
-                effect.Play();
-            }
-            //Action de la carte
-            hand.UpdateHandVisuals();
-            //Destroy(gameObject);
+             transform.position = initialPosition;
+             return;
         }
+
+        //Actions de la carte
+        foreach (ICardEffect effect in GetComponent<CardDisplay>().CardData.Effects)
+        {
+            effect.Play();
+        }
+        hand.UpdateHandVisuals();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -50,7 +58,7 @@ public class CardsHandling : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         
     }
 
-    internal void Discard(Transform discardZone)
+    public void Discard(Transform discardZone)
     {
         HandManager.CardsInHand.Remove(gameObject);
         DiscardZone.DiscardedCards.Add(gameObject);

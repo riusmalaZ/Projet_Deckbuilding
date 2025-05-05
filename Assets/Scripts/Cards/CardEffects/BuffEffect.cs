@@ -17,17 +17,8 @@ public class BuffEffect : ICardEffect
 
     public void Play()
     {
-        Debug.Log($"Buff temporaire : {statToModify} modifié de {amount} sur cartes " +
-                  $"{(affectAttackCards ? "d’attaque " : "")}{(affectDefenseCards ? "de défense" : "")} pour ce tour.");
-
-        //TurnManager.Instance.RegisterBuff(this, ThisTurn);
+        Debug.Log("Buff appliqué");
 
     }
 
-    /*public bool Affects(Card card)
-    {
-        bool isAttack = card.HasEffect<DamageEffect>();
-        bool isDefense = card.HasEffect<DefenseEffect>();
-        return (affectAttackCards && isAttack) || (affectDefenseCards && isDefense);
-    }*/
 }

@@ -23,7 +23,7 @@ public class CardDisplay : MonoBehaviour
         CardImage.sprite = CardData.CardSprite;
         Description.text = CardData.CardDescription;
         Description.color = Color.white;
-        CostText.text = CardData.Cost.ToString();
+        CostText.text = CardData.APCost.ToString();
         CostText.color = Color.white;
     }
 }

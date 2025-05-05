@@ -4,8 +4,13 @@ using UnityEngine;
 public class DamageEffect : ICardEffect
 {
     public int Damage;
+    public enum Target {Player, Ennemy}
     public void Play()
     {
-        Debug.Log(Damage + " Damages dealt");
+        if (TurnManager.PlayerTurn)
+            EnnemyArmy.Instance.Hit(Damage);
+
+        else
+            AllyArmy.Instance.Hit(Damage);
     }
 }
