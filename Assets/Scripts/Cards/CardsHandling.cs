@@ -60,8 +60,8 @@ public class CardsHandling : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void Discard(Transform discardZone)
     {
-        HandManager.CardsInHand.Remove(gameObject);
-        DiscardZone.DiscardedCards.Add(gameObject);
+        Zones.Instance.Hand.Cards.Remove(gameObject);
+        Zones.Instance.Discard.Add(gameObject);
         transform.position = discardZone.position;
         transform.rotation = Quaternion.identity;
         transform.SetParent(discardZone);

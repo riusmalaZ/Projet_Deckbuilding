@@ -4,46 +4,40 @@ using UnityEngine;
 
 public class CardList : MonoBehaviour
 {
-    
-    public GameObject Draw(List<GameObject> Cards)
+    public List<GameObject> Cards;
+    public virtual GameObject Draw()
     {
+        if (Cards.Count == 0)   
+            return null;
         GameObject cardDrawn = Cards[0];
         Cards.RemoveAt(0);
         return cardDrawn;
     }
 
-    public List<GameObject> Draw(int count, List<GameObject> Cards){
+    public List<GameObject> Draw(int count){
         List<GameObject> cardDrawn = new ();
         for (int i = 0; i < count; i++)
         {
-            cardDrawn.Add(Draw(Cards));
+            cardDrawn.Add(Draw());
         }
         return cardDrawn;
     }
 
-    public List<GameObject> Shuffle(List<GameObject> CardsToSuffle)
+    public void Shuffle()
     {
         List<GameObject> cardsShuffled = new ();
-        while (CardsToSuffle.Count > 0)
+        while (Cards.Count > 0)
         {
-            int nRand = Random.Range(0, CardsToSuffle.Count);
-            cardsShuffled.Add(CardsToSuffle[nRand]);
-            CardsToSuffle.RemoveAt(nRand);
+            int nRand = Random.Range(0, Cards.Count);
+            cardsShuffled.Add(Cards[nRand]);
+            Cards.RemoveAt(nRand);
         }
-        return cardsShuffled;
+        Cards = cardsShuffled;
     }
 
-    public void Add(GameObject cardToAdd, List<GameObject> Cards)
+    public void Add(params GameObject[] cardToAdd)
     {
-        Cards.Add(cardToAdd);
-    }
-    public void AddThenShuffle (GameObject[] cardsToAdd, List<GameObject> Cards)
-    {
-        foreach(GameObject n in cardsToAdd)
-        {
-            Add(n, Cards);
-        }
-        Shuffle(Cards);
+        Cards.AddRange(cardToAdd);
     }
 
     public GameObject Peek(List<GameObject> Cards){

@@ -62,10 +62,10 @@ public class TurnManager : MonoBehaviour
             return;
         PlayerTurn = false;
         activeBuffsThisTurn.Clear();
-        int nCardsInHand = HandManager.CardsInHand.Count;
+        int nCardsInHand = Zones.Instance.Hand.Cards.Count;
         for (int i = 0; i < nCardsInHand; i++)
         {
-            HandManager.CardsInHand[0].gameObject.GetComponent<CardsHandling>().Discard(_discardZone);
+            Zones.Instance.Hand.Cards[0].gameObject.GetComponent<CardsHandling>().Discard(_discardZone);
         }
 
         _ennemyArmy.NextAction.Play();

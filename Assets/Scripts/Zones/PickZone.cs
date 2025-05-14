@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class PickZone : CardList
 {
-    //[SerializeField] PlayerData _playerData;
-    public static List<GameObject> CardsInPick = new();
-
-    void Start()
+    public override GameObject Draw()
     {
-        
+        GameObject card = base.Draw();
+        if (card == null)
+        {
+            ResetPick();
+            return base.Draw();
+        }
+        return card;
     }
     public void ResetPick()
     {
-        int n = DiscardZone.DiscardedCards.Count;
-        for (int i = 0; i < n; i++)
-        {
-            CardsInPick.Add(DiscardZone.DiscardedCards[0]);
-            DiscardZone.DiscardedCards[0].SetActive(false);
-            DiscardZone.DiscardedCards[0].GetComponent<CardsHandling>().played = false;
-            
-            DiscardZone.DiscardedCards.RemoveAt(0);
-            
-        }
-        CardsInPick = Shuffle(CardsInPick);
+        Add(Zones.Instance.Discard.Cards.ToArray());
+        Zones.Instance.Discard.Cards.Clear();
+        Shuffle();
     }
 }

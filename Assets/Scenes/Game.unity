@@ -605,6 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641c0ee98c2d7de469766a360e551a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cards: []
 --- !u!1 &287876540
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 425625022}
+  - component: {fileID: 425625023}
   m_Layer: 5
   m_Name: Zones
   m_TagString: Untagged
@@ -794,6 +796,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &425625023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425625021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7ae4586dd43c449b60b18ae6aa426e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: {fileID: 1045296049}
+  Pick: {fileID: 1805769345}
+  Discard: {fileID: 244536725}
 --- !u!1 &506060473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 476a25cbbdfaf3a44802ad51aea0ec41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cards: []
   _pickZone: {fileID: 1805769345}
   _cardPrefab: {fileID: 2191588231423815007, guid: b06f31cc6d61526448abab1885a5bddb, type: 3}
   HandTransform: {fileID: 1045296048}
@@ -2649,6 +2667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90493b7f60fe47142af92cf4de6ebe0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cards: []
   _playerData: {fileID: 11400000, guid: 3ae41ca3804e87e4088124e7494a01be, type: 2}
   _cardPrefab: {fileID: 2191588231423815007, guid: b06f31cc6d61526448abab1885a5bddb, type: 3}
 --- !u!114 &1633726016
@@ -3106,6 +3125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c454ffc5422627419ed8ee64ee9c378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cards: []
 --- !u!1 &1860142433
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,54 +3262,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860142433}
   m_CullTransparentMesh: 1
---- !u!1 &1865435968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1865435970}
-  - component: {fileID: 1865435969}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1865435969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865435968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e2dd13eba96a384599f2e397147be6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pioche: []
-  deck: []
-  main: []
-  defausse: []
---- !u!4 &1865435970
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865435968}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.423935, y: -0.24799044, z: 0.98277706}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1915216998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4049,4 +4021,3 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1566295167}
   - {fileID: 506060477}
-  - {fileID: 1865435970}

@@ -22,7 +22,7 @@ public class Unit : MonoBehaviour
         CP -= amount;
         HPBar.fillAmount = (float)CP / CPMax;
         _cpText.text = $"CP : {CP} / {CPMax}";
-        if (CP < 0)
+        if (CP <= 0)
         {
             EndGame();
         }

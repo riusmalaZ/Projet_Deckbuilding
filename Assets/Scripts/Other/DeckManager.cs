@@ -6,7 +6,6 @@ public class DeckManager : CardList
 {
     [SerializeField] PlayerData _playerData;
     [SerializeField] GameObject _cardPrefab;
-    public static List<GameObject> Deck = new();
     
 
 
@@ -37,13 +36,10 @@ public class DeckManager : CardList
             cardDisplay.CardData = _playerData.ActualDeck[i];
             cardDisplay.UpdateCardDisplay();
             newCard.name = cardDisplay.NameText.text;
-            Deck.Add(newCard);
+            Zones.Instance.Pick.Add(newCard);
             newCard.SetActive(false);
         }
-        foreach (GameObject card in Deck)
-        {
-            PickZone.CardsInPick.Add(card);
-        }
-        PickZone.CardsInPick = Shuffle(PickZone.CardsInPick);
+
+        Zones.Instance.Pick.Shuffle();
     }
 }
