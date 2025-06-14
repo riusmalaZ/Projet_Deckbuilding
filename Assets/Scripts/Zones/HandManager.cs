@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,30 +11,31 @@ public class HandManager : CardList
     public float HorizontalSpacing = 150f;
     public float VerticalSpacing = 100f;
 
-    void Start()
-    {
-        
-    }
-
     public void AddCardsToHand(int amount)
     {
         Add(Zones.Instance.Pick.Draw(amount).ToArray());
-        foreach (GameObject card in Cards)
+
+        foreach (GameObject cardObj in Cards)
         {
-            card.SetActive(true);
-            RectTransform Tfm = card.GetComponent<RectTransform>();
-            Tfm.SetParent(transform);
-            Tfm.position = Vector3.zero;
+            cardObj.SetActive(true);
+            RectTransform tfm = cardObj.GetComponent<RectTransform>();
+            tfm.SetParent(transform);
+            tfm.position = Vector3.zero;
+
+            // Appliquer les buffs
+            CardDisplay display = cardObj.GetComponent<CardDisplay>();
+            if (display != null)
+            {
+                display.UpdateCardDisplay(); // Cette fonction affiche le coût modifié avec le buff
+            }
+
         }
 
         UpdateHandVisuals();
     }
 
-
-    //Fonction qui sert à placer les cartes en éventail
     public void UpdateHandVisuals()
     {
-        
         int cardCount = Cards.Count;
 
         if (cardCount == 1)
@@ -51,14 +51,10 @@ public class HandManager : CardList
             Cards[i].transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
 
             float horizontalOffset = HorizontalSpacing * (i - (cardCount - 1) / 2f);
-
-            float normalizedPosition = 2f * i / (cardCount - 1) - 1f; //normaliser la position des cartes entre -1 et 1
+            float normalizedPosition = 2f * i / (cardCount - 1) - 1f;
             float verticalOffset = VerticalSpacing * (1 - normalizedPosition * normalizedPosition);
 
-            //Set la position des cartes
             Cards[i].transform.localPosition = new Vector3(horizontalOffset, verticalOffset, 0f);
         }
-        
     }
-
 }

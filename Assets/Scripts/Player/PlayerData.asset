@@ -12,17 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa69ee3181c8f84d8695897a6c1d715, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  ClassSelected: {fileID: 11400000, guid: a2398b99b8566a843b93ca3bc648126e, type: 2}
-  ActualDeck:
-  - {fileID: 11400000, guid: 65548b34c62f0eb40aefa72a2ba2dc75, type: 2}
-  - {fileID: 11400000, guid: 65548b34c62f0eb40aefa72a2ba2dc75, type: 2}
-  - {fileID: 11400000, guid: 65548b34c62f0eb40aefa72a2ba2dc75, type: 2}
-  - {fileID: 11400000, guid: 65548b34c62f0eb40aefa72a2ba2dc75, type: 2}
-  - {fileID: 11400000, guid: 65548b34c62f0eb40aefa72a2ba2dc75, type: 2}
-  - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
-  - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
-  - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
-  - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
-  - {fileID: 11400000, guid: 8b8730cfeb5df284e8b2d156d1cfc83c, type: 2}
-  CP: 75
-  MaxAP: 3
+  ClassSelected: {fileID: 0}
+  ActualDeck: []
+  CP: 0
+  MaxAP: 0
+  APBoostActive: 0

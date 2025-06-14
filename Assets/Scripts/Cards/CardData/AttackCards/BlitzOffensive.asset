@@ -10,19 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b95dcafbdce14004892dcfa1256d8fb7, type: 3}
-  m_Name: PeasentCharge
+  m_Name: BlitzOffensive
   m_EditorClassIdentifier: 
-  CardName: Peasent Charge
-  APCost: 1
-  CardSprite: {fileID: -1730254177, guid: 132358e9bf26b60458b731bf001e31db, type: 3}
-  CardDescription: Deal 6 Damages
+  CardName: Blitz Offensive
+  APCost: 2
+  CardSprite: {fileID: 1744151977, guid: 132358e9bf26b60458b731bf001e31db, type: 3}
+  CardDescription: Deal damages and draw 2 cards.
   cardType: 0
   Effects:
-  - rid: 3437363834868465734
+  - rid: 9050700460912541868
+  - rid: 9050700460912541867
   references:
     version: 2
     RefIds:
-    - rid: 3437363834868465734
+    - rid: 9050700460912541867
+      type: {class: BuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        statToModify: 3
+        amount: 2
+        AffectAttackCards: 0
+        AffectDefenseCards: 0
+    - rid: 9050700460912541868
       type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
       data:
-        Damage: 6
+        Damage: 9

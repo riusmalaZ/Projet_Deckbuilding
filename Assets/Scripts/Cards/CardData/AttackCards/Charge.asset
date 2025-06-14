@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95dcafbdce14004892dcfa1256d8fb7, type: 3}
+  m_Name: Charge
+  m_EditorClassIdentifier: 
+  CardName: Charge
+  APCost: 3
+  CardSprite: {fileID: 1744151977, guid: 132358e9bf26b60458b731bf001e31db, type: 3}
+  CardDescription: Deal massive damage.
+  cardType: 0
+  Effects:
+  - rid: 9050700460912541870
+  references:
+    version: 2
+    RefIds:
+    - rid: 9050700460912541870
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        Damage: 25

@@ -5,33 +5,46 @@ using UnityEngine;
 public class EnnemyArmy : Unit
 {
     public static EnnemyArmy Instance;
+    public EnemyData EnemyData;
     //L'ennemi ne peut qu'attaquer pour l'instant
-    public List<DamageEffect> PossibleActions;
-    public DamageEffect NextAction;
+    int minPower, maxPower;
     public TMP_Text NextActionText;
-    
-    void Start()
+    DamageEffect damageEffect;
+    DefenseEffect defenseEffect;
+
+    void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-
+    }
+    public void InitArmy()
+    {
+        CPMax = EnemyData.CP;
         CP = CPMax;
         _cpText.text = $"CP : {CP} / {CPMax}";
+
+        minPower = EnemyData.MinPower;
+        maxPower = EnemyData.MaxPower;
+
         player = false;
+        damageEffect = new();
+        defenseEffect = new();
     }
 
 
-    // Update is called once per frame
-    void Update()
+    public void Play()
     {
-        
+        damageEffect.Play();
+        defenseEffect.Play();
     }
 
     public void ShowNextAction()
     {
-        DamageEffect nextEffect = PossibleActions[Random.Range(0, PossibleActions.Count)];
-        NextAction = nextEffect;
-        NextActionText.text = "Next action :\n" + nextEffect.Damage.ToString() + " Damage";
+        int i = Random.Range(minPower, maxPower + 1);
+        int n = Random.Range(0, i);
+        damageEffect.Damage = n;
+        defenseEffect.Defense = i - n;
+        NextActionText.text = "Next action :\n" + damageEffect.Damage.ToString() + " Damage and " + defenseEffect.Defense.ToString() + " Defense";
     }
 
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff74eaf7c826e1340a99a4419fd9d6a9, type: 3}
-  m_Name: CountyLord
+  m_Name: ArtilleryCommander
   m_EditorClassIdentifier: 
   BaseDeck:
   - {fileID: 11400000, guid: 65548b34c62f0eb40aefa72a2ba2dc75, type: 2}
@@ -23,5 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
   - {fileID: 11400000, guid: 1ce39d80be63b7242abbd38e527b70d8, type: 2}
   - {fileID: 11400000, guid: 8b8730cfeb5df284e8b2d156d1cfc83c, type: 2}
-  BaseCP: 75
+  BaseCP: 110
   BaseAP: 3

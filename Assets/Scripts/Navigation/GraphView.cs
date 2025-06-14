@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GraphView : MonoBehaviour
 {
-    public RectTransform graphContainer;
+    public RectTransform graphContainer, EdgeContainer, NodeContainer;
     public GameObject nodePrefab;
     public GraphGenerator generator;
     public GraphRewriter rewriter;
@@ -13,9 +13,19 @@ public class GraphView : MonoBehaviour
 
     void Start()
     {
-        Graph graph = generator.Generate();
-        rewriter = new GraphRewriter();
-        rewriter.Rewrite(graph);
+        Graph graph;
+
+        if (GraphHolder.Instance.CurrentGraph != null)
+        {
+            graph = GraphHolder.Instance.CurrentGraph;
+        }
+        else
+        {
+            graph = generator.Generate();
+            rewriter = new GraphRewriter();
+            rewriter.Rewrite(graph);
+            GraphHolder.Instance.CurrentGraph = graph;
+        }
 
         DrawGraph(graph);
     }
@@ -33,7 +43,7 @@ public class GraphView : MonoBehaviour
             for (int i = 0; i < nodes.Count; i++)
             {
                 Vector2 pos = new Vector2(startX + i * xSpacing, layer * ySpacing);
-                GameObject obj = Instantiate(nodePrefab, graphContainer);
+                GameObject obj = Instantiate(nodePrefab, NodeContainer);
                 NodeView view = obj.GetComponent<NodeView>();
                 view.Init(nodes[i], pos);
                 nodeToView[nodes[i]] = view;
@@ -54,8 +64,8 @@ public class GraphView : MonoBehaviour
                 foreach (Node neighbor in node.Neighbors)
                 {
                     NodeView toView = nodeToView[neighbor];
-                    Vector2 fromPos = new Vector2(fromView.rectTransform.anchoredPosition.x + 50, fromView.rectTransform.anchoredPosition.y + 50);
-                    Vector2 toPos = new Vector2(toView.rectTransform.anchoredPosition.x + 50, toView.rectTransform.anchoredPosition.y + 50);
+                    Vector2 fromPos = new Vector2(fromView.RectTransform.anchoredPosition.x + 50, fromView.RectTransform.anchoredPosition.y + 50);
+                    Vector2 toPos = new Vector2(toView.RectTransform.anchoredPosition.x + 50, toView.RectTransform.anchoredPosition.y + 50);
                     DrawLine(fromPos, toPos);
                 }
             }
@@ -66,9 +76,9 @@ public class GraphView : MonoBehaviour
     {
         //creer une ligne en code en instanciant une image
         GameObject line = new GameObject("Edge", typeof(Image));
-        line.transform.SetParent(graphContainer, false);
+        line.transform.SetParent(EdgeContainer, false);
         Image img = line.GetComponent<Image>();
-        img.color = Color.white;
+        img.color = Color.black;
 
         RectTransform rt = line.GetComponent<RectTransform>();
         Vector2 dir = (end - start).normalized;

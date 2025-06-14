@@ -9,29 +9,26 @@ using UnityEngine.UIElements;
 public class CardsHandling : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler
 {
     Vector3 initialPosition;
-    [HideInInspector] public bool played;
     [HideInInspector] public bool playable;
     HandManager hand;
-    
+
 
     void Start()
     {
-        played = false;
         initialPosition = transform.position;
-        hand =  GetComponentInParent<HandManager>();
+        hand = GetComponentInParent<HandManager>();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
         initialPosition = transform.position;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
         int cardAP = GetComponent<CardDisplay>().CardData.APCost;
-        playable = AllyArmy.Instance.UseCard(cardAP);
+        playable = AllyArmy.Instance.TryUseCard(cardAP);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(!played) transform.position = eventData.position;
-
+        transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -39,23 +36,18 @@ public class CardsHandling : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 
 
-        if (!played && !playable)
+        if (!playable)
         {
-             transform.position = initialPosition;
-             return;
+            transform.position = initialPosition;
+            return;
         }
-
-        //Actions de la carte
-        foreach (ICardEffect effect in GetComponent<CardDisplay>().CardData.Effects)
-        {
-            effect.Play();
-        }
-        hand.UpdateHandVisuals();
+       
+        if (hand != null) hand.UpdateHandVisuals();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
+
     }
 
     public void Discard(Transform discardZone)

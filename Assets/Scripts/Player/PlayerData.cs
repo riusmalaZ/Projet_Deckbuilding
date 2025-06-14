@@ -8,5 +8,6 @@ public class PlayerData : ScriptableObject
     public List<Card> ActualDeck;
     public int CP;
     public int MaxAP;
+    public bool APBoostActive;
 
 }

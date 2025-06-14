@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95dcafbdce14004892dcfa1256d8fb7, type: 3}
+  m_Name: CoveringFire
+  m_EditorClassIdentifier: 
+  CardName: Covering Fire
+  APCost: 1
+  CardSprite: {fileID: -2081245629, guid: 132358e9bf26b60458b731bf001e31db, type: 3}
+  CardDescription: Gain defense, next attack deals +3 damage.
+  cardType: 1
+  Effects:
+  - rid: 9050700460912541876
+  - rid: 9050700460912541877
+  references:
+    version: 2
+    RefIds:
+    - rid: 9050700460912541876
+      type: {class: DefenseEffect, ns: , asm: Assembly-CSharp}
+      data:
+        Defense: 5
+    - rid: 9050700460912541877
+      type: {class: BuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        statToModify: 1
+        amount: 3
+        AffectAttackCards: 1
+        AffectDefenseCards: 0

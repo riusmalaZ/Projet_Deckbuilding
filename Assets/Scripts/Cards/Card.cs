@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 
@@ -10,8 +11,8 @@ public class Card : ScriptableObject
     public int APCost;
     public Sprite CardSprite;
     public string CardDescription;
-    
-    public enum CardType{ Attack, Defense, Buff}
+
+    public enum CardType { Attack, Defense, Buff }
     public CardType cardType;
 
     [SerializeReference, SubclassSelector]

@@ -9,24 +9,32 @@ public class AllyArmy : Unit
     [HideInInspector] public int APMax, AP;
     public TMP_Text APText;
     public static AllyArmy Instance;
-    
-    void Start()
+
+    void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-
+    }
+    void Start()
+    {
         APMax = playerData.MaxAP;
         AP = APMax;
         UpdateAPTxt();
 
-        CPMax = playerData.CP;
-        CP = CPMax;
-        _cpText.text = $"CP : {CP} / {CPMax}";
+        CPMax = playerData.ClassSelected.BaseCP;
 
         player = true;
+        if (playerData.CP == 0)
+        {
+            playerData.CP = playerData.ClassSelected.BaseCP;
+
+        }
+        CP = playerData.CP;
+        _cpText.text = $"CP : {CP} / {CPMax}";
+        HPBar.fillAmount = (float)CP / CPMax;
     }
 
-    public bool UseCard(int amount)
+    public bool TryUseCard(int amount)
     {
         if (amount > AP)
         {
@@ -35,13 +43,16 @@ public class AllyArmy : Unit
         }
         else
         {
-            AP -= amount;
-            UpdateAPTxt();
             return true;
         }
     }
+    public void UseCard(int amount)
+    {
+        AP -= amount;
+        UpdateAPTxt();
+    }
     public void UpdateAPTxt()
     {
-        APText.text = $"Action Points :\n{AP}";
+        if (APText != null )APText.text = $"Action Points :\n{AP}";
     }
 }

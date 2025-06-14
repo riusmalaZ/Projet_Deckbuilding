@@ -7,8 +7,22 @@ public class GraphGenerator : MonoBehaviour
     [SerializeField] int _width = 3;        // largeur
     [SerializeField] float _connectionChance = 0.6f;
     [SerializeField] float _nodeSpawnChance = 0.66f;
+    [SerializeField] int _minNodes = 10;
+    float balance;
 
     public Graph Generate()
+    {
+        balance = 0;
+        Graph graph;
+        graph = GenerateOnce();
+        while (CountNodes(graph) < _minNodes)
+        {
+            graph = GenerateOnce();
+        }
+        return graph;
+    }
+
+    private Graph GenerateOnce()
     {
         Graph graph = new Graph();
 
@@ -94,7 +108,7 @@ public class GraphGenerator : MonoBehaviour
         RemoveUnreachableNodes(graph);
         // on cree les types des nodes
         AssignTypes(graph);
-        
+
         return graph;
     }
 
@@ -126,13 +140,18 @@ public class GraphGenerator : MonoBehaviour
 
         // Exemple simple de pondération
         float rand = Random.value;
-        if (rand < 0.5f) return NodeType.Combat;
-        if (rand < 0.75f) return NodeType.Treasure;
+        if (rand < 0.5f) return NodeType.Fight;
+        if (rand < 0.66f + balance)
+        {
+            balance += 0.1f;
+            return NodeType.Treasure;
+        }
+        balance -= 0.5f;
         return NodeType.Shop;
     }
     void MarkReachableNodes(Node start)
     {
-        
+
         Queue<Node> queue = new Queue<Node>();
         start.Visited = true;
         queue.Enqueue(start);
@@ -166,5 +185,21 @@ public class GraphGenerator : MonoBehaviour
             }
         }
     }
+
+    int CountNodes(Graph graph)
+    {
+        int count = 0;
+        foreach (var layer in graph.Layers)
+            count += layer.Count;
+        return count;
+    }
+
+    public void ResetGraphHolderData()
+    {
+        GraphHolder.Instance.CurrentGraph = null;
+        GraphHolder.Instance.CurrentNode = null;
+        GraphHolder.Instance.PlayerPosition = Vector2.zero;
+    }
+
 
 }

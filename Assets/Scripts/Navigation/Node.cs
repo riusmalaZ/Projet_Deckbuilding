@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum NodeType { Start, Combat, Shop, Treasure, Boss }
+public enum NodeType { Start, Fight, Shop, Treasure, Boss }
 
 public class Node
 {
